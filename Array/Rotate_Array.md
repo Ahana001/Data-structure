@@ -52,7 +52,15 @@ class Solution {
 
     }
 }
+```
 
+The intuition behind this approach is to reverse the array in three steps:
+
+* Reverse the entire array.
+* Reverse the first k elements.
+* Reverse the remaining n−k elements.
+
+```java
 class Solution {
     public void rotate(int[] nums, int k) {
        int n = nums.length;
