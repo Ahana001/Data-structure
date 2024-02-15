@@ -34,5 +34,51 @@ for(int i(0); i<n; i++){
 ```
 
 ```c
+    int missingNumber(vector<int>& array, int n) {
+        int a=0;
+        int b=0;
 
+        // sare arrays elements ka xor
+        for(int i=0;i<n-1;i++){ // do not have elements equal to n it is equal to n-1
+           b=b+array[i];
+           a=a+(i+1);
+        }
+        a=a+n; // xor till 4 and n = 5
+        
+        return a-b;   
+    }
+
+   int missingNumber(vector<int>& array, int n) {
+        int a=(n*(n+1))/2;
+        int b=0;
+        
+           
+        // sare arrays elements ka xor
+        for(int i=0;i<n-1;i++){ // do not have elements equal to n it is equal to n-1
+           b=b+array[i];
+        
+        }
+        
+        return a-b;   
+    }
+```
+## Best Solution
+
+summation make bigger intergers
+
+```c
+int missingNumber(vector<int>& array, int n) {
+        int a=0;
+        int b=0;
+        
+           
+        // sare arrays elements ka xor
+        for(int i=0;i<n-1;i++){ // do not have elements equal to n it is equal to n-1
+           b=b^array[i];
+           a=a^(i+1);
+        }
+        a=a^n; // xor till 4 and n = 5
+        
+        return a^b;   
+    }
 ```
