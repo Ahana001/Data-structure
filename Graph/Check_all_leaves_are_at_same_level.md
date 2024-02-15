@@ -53,3 +53,30 @@ Expected Auxiliary Space: O(height of tree)
         return checkUtil(root,0,&leaveLevel); // sending reference of leaveLevel so all recursion call gets updated value of leaveLevel
     }
 ```
+# without recursion with queue
+
+```c
+bool check(Node *root)
+    {
+        queue<pair<Node *,int>> q;
+        int leaveLevel = -1;
+        q.push({root,0});
+        
+        while(!q.empty()){
+            Node* node = q.front().first;
+            int level = q.front().second;
+            q.pop();
+            if(node->left == NULL && node->right == NULL){
+                if(leaveLevel == -1){
+                    leaveLevel = level;
+                }else if(leaveLevel != level){
+                    return false;
+                }
+            }
+
+            if(node->left) q.push({node->left, level+1});
+            if(node->right) q.push({node->right, level+1});
+        }
+        return true;
+    }
+```
