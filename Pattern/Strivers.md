@@ -398,3 +398,33 @@ for(int i(1); i<=n; i++){
         cout << endl;
 }
 ```
+
+## Pattern 18
+```
+E
+DE
+CDE
+BCDE
+ABCDE
+```
+
+## solution
+```
+n=5             i      char
+E               1   'A' + n - i
+DE              2
+CDE             3
+BCDE            4
+ABCDE           5
+```
+
+```c
+for(int i(1); i<=n; i++){
+        char start= 'A'+n-i;
+        for (int k(1); k<=i; k++){
+            cout << start;
+            start++;
+        }
+        cout << endl;
+}
+```
