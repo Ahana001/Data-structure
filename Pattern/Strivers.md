@@ -253,3 +253,34 @@ for (int i(1); i<=n; i++){
         cout << endl;
 }
 ```
+## Pattern 12
+```
+1      1
+12    21
+123  321
+12344321
+```
+
+### solution
+```
+n=4           [num, space, num]  i
+1      1      [ 1     6     1 ]  1
+12    21      [ 2     4     2 ]  2
+123  321      [ 3     2     3 ]  3
+12344321      [ 4     0     4 ]  4
+```
+
+```c
+for (int i(1); i<=n; i++){
+        for(int j(1); j<=i; j++){
+            cout << j;
+        }
+        for (int l(1); l<=(2*n)-(2*i); l++){
+            cout << " ";
+        }
+        for (int k(1); k<=i; k++){
+            cout << i-k+1;
+        }
+        cout << endl;
+}
+```
