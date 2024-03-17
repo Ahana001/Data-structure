@@ -15,7 +15,7 @@ for(int i(0); i<n; i++){
             cout << "*";
         }
         cout << endl;  // new line
-    }
+}
 ```
 
 ## Pattern 2
@@ -48,13 +48,14 @@ for(int i(0); i<n; i++){
 
 ### solution
 ```c
- for(int i(0); i<n; i++){
+for(int i(0); i<n; i++){
         for(int j(0); j<=i; j++){
             cout << j + 1; 
         }
         cout << endl;
-    }
+}
 ```
+
 ## Pattern 4
 ```
 1
@@ -63,12 +64,32 @@ for(int i(0); i<n; i++){
 4444
 55555
 ```
+
 ### solution
 ```c
- for(int i(0); i<n; i++){
+for(int i(0); i<n; i++){
         for(int j(0); j<=i; j++){
             cout << i + 1; 
         }
         cout << endl;
-    }
+}
+```
+
+## Pattern 5
+```
+*****
+****
+***
+**
+*
+```
+
+### solution
+```
+for(int i(n); i>0; i--){
+        for(int j(0); j<i; j++){
+            cout << "*"; 
+        }
+        cout << endl;
+}
 ```
