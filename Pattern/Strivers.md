@@ -187,3 +187,41 @@ for (int i(0); i<n; i++){
         cout << endl;
     }
 ```
+
+## Pattern 10
+```
+*
+**
+***
+****
+*****
+****
+***
+**
+*
+```
+
+### solution 
+```
+n=4
+           (i)           star
+*           1             1
+* *         2             2
+* * *       3             3
+* * * *     4 (n==i)      4
+* * *       5             3 (2*n-i)
+* *         6             2
+*           7             1
+         (2*n-1)
+```
+
+```c
+for (int i(1); i<2*n; i++){
+        int star = i;
+        if(n<i) star = (2*n) - i;
+        for (int j(1); j <= star; j++){
+            cout << "*";
+        }
+        cout << endl;
+}
+```
