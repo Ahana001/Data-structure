@@ -305,3 +305,61 @@ int start = 1;
         cout << endl;
 }
 ```
+
+## Pattern 14
+```
+A
+AB
+ABC
+ABCD
+ABCDE
+```
+
+## solution
+```c
+for (int i(0); i<n; i++){
+        for(char c('A'); c<='A'+i; c++){
+            cout << c;
+        }
+        cout << endl;
+}
+```
+
+## Pattern 15
+```
+ABCDE
+ABCD
+ABC
+AB
+A
+```
+
+## solution
+```c
+for (int i(0); i<n; i++){
+        for(char c('A'); c<'A'+n-i; c++){
+            cout << c;
+        }
+        cout << endl;
+}
+```
+
+## Pattern 16
+```
+A
+BB
+CCC
+DDDD
+EEEEE
+```
+
+## solution
+```c
+for (int i(0); i<n; i++){
+        char c = 'A' + i;
+        for(int j(0); j<=i; j++){
+            cout << c;
+        }
+        cout << endl;
+}
+```
