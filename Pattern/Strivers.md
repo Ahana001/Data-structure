@@ -83,9 +83,9 @@ for(int i(0); i<n; i++){
 **
 *
 
-1 -> 5
-2 -> 4
-
+1 (row) -> 5 (star)
+2 (row) -> 4 (star)
+3 (row) -> 3 (star)
 n - row
 ```
 
@@ -93,6 +93,13 @@ n - row
 ```c
 for(int i(n); i>0; i--){
         for(int j(0); j<i; j++){
+            cout << "*"; 
+        }
+        cout << endl;
+}
+
+for(int i(0); i<n; i++){
+        for(int j(0); j<n-i; j++){
             cout << "*"; 
         }
         cout << endl;
