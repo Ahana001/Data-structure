@@ -501,3 +501,51 @@ for (int j(1); j<= n; j++){
 }
 ```
 
+## Pattern 20
+```
+*        *
+**      **
+***    ***
+****  ****
+**********
+****  ****
+***    ***
+**      **
+*        *
+```
+
+## solution
+```
+n=5           i    [star space star]
+*        *    1    [ 1     8     1 ]
+**      **    2    [ 2     6     2 ]
+***    ***    3    [ 3     4     3 ]
+****  ****    4    [ 4     2     4 ]
+**********    5    [ 5     0     5 ]
+****  ****    6    [ 4     2     4 ]
+***    ***    7    [ 3     4     3 ]
+**      **    8    [ 2     6     2 ]
+*        *    9    [ 1     8     1 ]
+```
+```c
+int space = 2*n-2;
+for(int i(1); i<2*n; i++){
+        // star
+        int star = i;
+        if (n < i) star = (2 * n) - i;
+        for (int j(1); j <= star; j++){
+            cout << "*";
+        }
+        // space
+        for (int b(1); b<=space; b++){
+            cout << " ";
+        }
+        if(n<=i) space=space+2;
+        else space=space-2;
+        // star
+        for (int j(1); j <= star; j++){
+            cout << "*";
+        }
+        cout << endl;
+}
+```
