@@ -363,3 +363,38 @@ for (int i(0); i<n; i++){
         cout << endl;
 }
 ```
+
+## Pattern 17
+```
+   A   
+  ABA  
+ ABCBA 
+ABCDCBA
+```
+
+## solution
+```
+ n=4     i   [space, char, space]
+   A     1   [ 3      1      3  ]
+  ABA    2   [ 2      3      2  ]
+ ABCBA   3   [ 1      5      1  ]
+ABCDCBA  4   [ 0      7      0  ]
+```
+
+```c
+for(int i(1); i<=n; i++){
+        for(int j(1); j<=n-i; j++){
+            cout << " ";
+        }
+        char c = 'A';
+        for (int l=1; l<=2*i-1; l++){
+            cout << c;
+            if(l>=i)c--;
+            else c++;
+        }
+        for (int k(1); k<=n-i; k++){
+            cout << " ";
+        }
+        cout << endl;
+}
+```
