@@ -225,3 +225,31 @@ for (int i(1); i<2*n; i++){
         cout << endl;
 }
 ```
+
+## Pattern 11
+```
+1
+01
+101
+0101
+```
+
+### solution
+```
+n=4           i
+1             1
+0 1           2
+1 0 1         3
+0 1 0 1       4
+```
+```c
+for (int i(1); i<=n; i++){
+        int start = 1;
+        if(i%2 == 0) start = 0;
+        for(int j(1); j<=i; j++){
+            cout << start;
+            start = 1 - start;
+        }
+        cout << endl;
+}
+```
