@@ -106,7 +106,7 @@ for(int i(0); i<n; i++){
 }
 ```
 
-## Pattern
+## Pattern 6
 ```
 12345
 1234
@@ -114,6 +114,7 @@ for(int i(0); i<n; i++){
 12
 1
 ```
+
 ### solution
 ```c
 for (int i(n); i > 0; i--){
@@ -126,6 +127,34 @@ for (int i(n); i > 0; i--){
 for(int i(0); i<n; i++){
         for(int j(0); j<n-i; j++){
             cout << j + 1; 
+        }
+        cout << endl;
+}
+```
+
+## Pattern 7
+```             [space, start, space]
+    *           [ 4,     1,      4  ]
+   ***          [ 3,     3,      3  ]
+  *****         [ 2,     5,      2  ]
+ *******        [ 1,     7,      1  ]
+*********       [ 0,     9,      0  ]
+```
+
+### solution
+
+#### Pattern :- [space, start, space]
+
+```c
+for (int i(0); i<n; i++){
+        for(int j(0); j<n-i-1; j++){
+            cout << " ";
+        }
+        for (int k(0); k<2*i+1; k++){
+            cout << "*";
+        }
+        for (int l(0); l<n-i-1; l++){
+            cout << " ";
         }
         cout << endl;
 }
