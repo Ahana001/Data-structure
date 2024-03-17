@@ -1,5 +1,4 @@
 # Pattern 1
-
 ```
 * * * * * *
 * * * * * *
@@ -18,8 +17,8 @@
         cout << endl;  // new line
     }
 ```
-# Pattern 2
 
+# Pattern 2
 ```
 *
 **
@@ -36,4 +35,18 @@ for(int i(0); i<n; i++){
         }
         cout << endl;
 }
+```
+
+# Pattern
+```
+1
+12
+123
+1234
+12345
+```
+
+## solution
+```c
+
 ```
