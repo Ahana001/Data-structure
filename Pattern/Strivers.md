@@ -549,3 +549,32 @@ for(int i(1); i<2*n; i++){
         cout << endl;
 }
 ```
+
+## Pattern 21
+```
+****
+*  *
+*  *
+****
+```
+
+### solution
+```
+n=4    i      
+****   1
+*  *   2
+*  *   3
+****   4
+```
+```c
+for(int i(1); i<=n; i++){
+       for(int j(1); j<=n; j++){
+            if(i==1 || i==n) cout << "*";
+            else {
+                if (j == 1 || j == n) cout << "*";
+                else cout << " ";
+            }
+       }
+        cout << endl;
+}
+```
