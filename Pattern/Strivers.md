@@ -82,10 +82,15 @@ for(int i(0); i<n; i++){
 ***
 **
 *
+
+1 -> 5
+2 -> 4
+
+n - row
 ```
 
 ### solution
-```
+```c
 for(int i(n); i>0; i--){
         for(int j(0); j<i; j++){
             cout << "*"; 
