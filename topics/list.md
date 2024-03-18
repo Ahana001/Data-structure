@@ -7,9 +7,9 @@ using namespace std;
 void explainList(){
     list<int> l; // {1,8,3,5}
     l.push_back(3);
-    l.push_back(5);
+    l.emplace_back(5);
     l.push_front(8);
-    l.push_front(1);
+    l.emplace_front(1);
 
     for(auto i:l){
         cout << i << " ";
