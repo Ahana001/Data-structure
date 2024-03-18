@@ -9,7 +9,8 @@ void explainVector(){
     v.push_back(3);
     v.push_back(8);
     v.push_back(5);
-    v.emplace_back(1); // emplace_back constructs the new element in-place directly within the container, whereas push_back typically involves creating a temporary object and then copying or moving it into the container.
+    v.emplace_back(1);  // emplace_back constructs the new element in-place directly within the container,
+                       // whereas push_back typically involves creating a temporary object and then copying or moving it into the container.
 
     /*--------------------------
             All Elements
