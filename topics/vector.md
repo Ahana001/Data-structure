@@ -54,6 +54,14 @@ void explainVector(){
     {
         cout << *it2 << " ";
     }
+    cout << endl;
+
+    vector<int> vec(4,100); // {100,100,100,100}
+    cout << "Size of vector:- " << vec.size() << endl; 
+    vec.pop_back();
+    for(auto it3:vec){
+        cout << it3 << " ";
+    }
 }
 
 int main(){
