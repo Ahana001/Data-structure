@@ -40,11 +40,20 @@ void explainVector(){
     //     cout << *it2 << " ";
     // }
 
-    /*------------------------------
+   /*------------------------------
          Access element like array
     --------------------------------*/
     cout << "Access element like array :- " << v[0] << endl;
     cout << "Access last element :- " << v.back() << endl;
+
+    // {3,8,5,1}
+    v.insert(v.begin() + 1,300); // insert at before element
+    v.insert(v.begin(),2, 100);
+    // Another way to iterate
+    for (auto it2 = v.begin(); it2 != v.end(); it2++)
+    {
+        cout << *it2 << " ";
+    }
 }
 
 int main(){
