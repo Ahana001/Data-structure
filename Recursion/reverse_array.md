@@ -21,7 +21,7 @@ int main(){
 ```
 
 ### Optimization ( Reduce Pointers )
-
+```
 Array           :- [ 1, 2, 3, 4, 5, 6, 7 ]
 index           :-   0  1  2  3  4  5  6
 
@@ -30,6 +30,7 @@ swappping index :-   0 -> 6
                      1 -> 5
                      2 -> 4  (n-i-1)
 
+```
 
 ```c
 void reverseArray(int left, int n, int a[])
