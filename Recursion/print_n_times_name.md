@@ -41,5 +41,5 @@ int main(){
 }
 ```
 
-## Time Complexity: O(n)
+**Time Complexity: O(n)**
 **Space Complexity: O(n)**  it is stack space used by program to store activation records in recursion stack 
