@@ -1,5 +1,25 @@
 #  Rotate Array
-Given an integer array nums, rotate the array to the right by k steps, where k is non-negative.
+
+## Left Rotate an Array by One
+
+Time Complexity: O(n)
+
+Space Complexity: O(1)
+
+```c
+vector<int> rotateArray(vector<int>& arr, int n) {
+    // Write your code here.
+    int temp = arr[0];
+    for(int i=0; i<n-1; i++){
+        arr[i] = arr[i+1];
+    }
+    arr[n-1] = temp;
+    return arr;
+}
+
+```
+
+## Given an integer array nums, rotate the array to the right by k steps, where k is non-negative.
 
 ## Example 1:
 
@@ -21,6 +41,10 @@ Explanation:
 rotate 1 steps to the right: [99,-1,-100,3]
 rotate 2 steps to the right: [3,99,-1,-100]
 ```
+
+Time Complexity: O(k) + O(n-k) + O(k) -> O(n+k)
+
+Space Complexity: O(k) 
 
 ```java
 
@@ -54,11 +78,42 @@ class Solution {
 }
 ```
 
+```c
+vector<int> rotateArray(vector<int> arr, int k)
+{
+    // Write your code here.
+    // { 1, 2, 3, 4, 5, 6, 7, 8 }
+    //  K=3
+    // { 1, 2,  || 4,  5 }
+    //   0  1   || 2   3
+    int n = arr.size();
+    k = k % n;
+    int tempArrayForKElements[k];
+
+    for (int i = 0; i < k; i++){
+        tempArrayForKElements[i] = arr[i];  // use push_bak() for vector operations
+    }
+    for (int j = k; j < n; j++){
+        arr[j - k] = arr[j];
+    }
+    for (int l = n - k; l < n; l++){
+        arr[l] = tempArrayForKElements[l - (n-k)];
+    }
+
+    return arr;
+}
+
+```
+
 The intuition behind this approach is to reverse the array in three steps:
 
 * Reverse the entire array.
 * Reverse the first k elements.
 * Reverse the remaining n−k elements.
+
+Time Complexity: O(k) + O(n-k) + O(n) -> O(2n)
+
+Space Complexity: O(1) 
 
 ```java
 class Solution {
@@ -79,5 +134,21 @@ class Solution {
             }
             
     }
+}
+```
+
+```c
+vector<int> rotateArray(vector<int> arr, int k)
+{
+    // Write your code here.
+    // { 1, 2, 3, 4, 5, 6, 7, 8 }
+    //  K=3
+    // { 1, 2,  || 4,  5 }
+    //   0  1   || 2   3
+    reverse(arr.begin(), arr.begin() +k);
+    reverse(arr.begin() +k, arr.end());
+    reverse(arr.begin(), arr.end());
+
+    return arr;
 }
 ```
