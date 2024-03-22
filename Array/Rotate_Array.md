@@ -19,9 +19,27 @@ vector<int> rotateArray(vector<int>& arr, int n) {
 
 ```
 
+## Reverse array k steps left side
+
+```c
+vector<int> rotateArray(vector<int> arr, int k)
+{
+    // Write your code here.
+    // { 1, 2, 3, 4, 5, 6, 7, 8 }
+    //  K=3
+    // { 1, 2,  || 4,  5 }
+    //   0  1   || 2   3
+    reverse(arr.begin(), arr.begin() +k);
+    reverse(arr.begin() +k, arr.end());
+    reverse(arr.begin(), arr.end());
+
+    return arr;
+}
+```
+
 ## Given an integer array nums, rotate the array to the right by k steps, where k is non-negative.
 
-## Example 1:
+### Example 1:
 
 ```
 Input: nums = [1,2,3,4,5,6,7], k = 3
@@ -32,7 +50,7 @@ rotate 2 steps to the right: [6,7,1,2,3,4,5]
 rotate 3 steps to the right: [5,6,7,1,2,3,4]
 ```
 
-## Example 2:
+### Example 2:
 
 ```
 Input: nums = [-1,-100,3,99], k = 2
@@ -105,6 +123,8 @@ vector<int> rotateArray(vector<int> arr, int k)
 
 ```
 
+## Approach 1
+
 The intuition behind this approach is to reverse the array in three steps:
 
 * Reverse the entire array.
@@ -114,6 +134,41 @@ The intuition behind this approach is to reverse the array in three steps:
 Time Complexity: O(k) + O(n-k) + O(n) -> O(2n)
 
 Space Complexity: O(1) 
+
+## Approach 2
+
+Reverse first n-k element
+Reverse remaining k element
+Reverse entire array
+
+```c
+#include <bits/stdc++.h>
+using namespace std;
+
+// {1, 3, 5, 7, 9}
+// {1, 3, 5} {7, 9}
+// {5, 3, 1} {9, 7}
+// {7, 9, 1, 3, 5}
+// k=2
+// {7, 9, 1, 3, 5}
+
+int main()
+{
+    vector<int> input = {1, 3, 5, 7, 9};
+    int k = 2;
+    int n = input.size();
+    reverse(input.begin(), input.begin() + (n - k));
+    reverse(input.begin() + (n - k), input.end());
+    reverse(input.begin(), input.end());
+
+    for (int i : input)
+    {
+        cout << i << " ";
+    }
+
+    return 0;
+}
+```
 
 ```java
 class Solution {
@@ -134,21 +189,5 @@ class Solution {
             }
             
     }
-}
-```
-
-```c
-vector<int> rotateArray(vector<int> arr, int k)
-{
-    // Write your code here.
-    // { 1, 2, 3, 4, 5, 6, 7, 8 }
-    //  K=3
-    // { 1, 2,  || 4,  5 }
-    //   0  1   || 2   3
-    reverse(arr.begin(), arr.begin() +k);
-    reverse(arr.begin() +k, arr.end());
-    reverse(arr.begin(), arr.end());
-
-    return arr;
 }
 ```
