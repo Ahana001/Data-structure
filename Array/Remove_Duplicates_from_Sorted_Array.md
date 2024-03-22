@@ -54,5 +54,22 @@ class Solution {
         
     }
 }
+```
 
+```c
+int removeDuplicates(vector<int> &arr, int n) {
+	// Write your code here.
+	int left=0;
+
+	if(n<1){
+		return 1;
+	}
+	for(int i=1; i<n; i++){
+		if(arr[left] != arr[i]){
+			left++;
+			arr[left] = arr[i];
+		}
+	}
+	return left+1;
+}
 ```
