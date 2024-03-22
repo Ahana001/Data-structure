@@ -3,6 +3,7 @@
 ## Brute
 
 Time Complexity: O(nlogn)   // for sorting
+
 Space Complexity: O(1)     // Quick sort space complexity O(1)
 
 ```c
@@ -15,7 +16,8 @@ int largestElement(vector<int> &arr, int n) {
 
 ## Optimize
 
-Time Complexity: O(n)   
+Time Complexity: O(n)  
+
 Space Complexity: O(1)  
 
 ```c
